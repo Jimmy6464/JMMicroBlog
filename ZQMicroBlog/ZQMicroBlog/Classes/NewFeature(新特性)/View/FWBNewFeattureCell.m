@@ -15,6 +15,7 @@
 static NSString *cell = @"cell";
 static UICollectionView *_collectionView = nil;
 @implementation FWBNewFeattureCell
+#pragma mark - initializ the shareButton and beginButton
 - (UIButton *)shareButton
 {
     if (_shareButton == nil) {
@@ -54,7 +55,7 @@ static UICollectionView *_collectionView = nil;
     }
     return _imageView;
 }
-#pragma mark - 
+#pragma mark -  button
 - (void)share:(UIButton *)btn
 {
     btn.selected = !btn.selected;

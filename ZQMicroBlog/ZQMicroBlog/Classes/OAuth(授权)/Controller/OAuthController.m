@@ -35,6 +35,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - webviewdelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *urlStr = request.URL.absoluteString;
@@ -50,6 +51,7 @@
 }
 - (void)accessTokenWithCode:(NSString *)code
 {
+    //获取accessToken
     [AccountTool accessTokenWithCode:code success:^(Account *account) {
         [AccountTool saveAccount:account];
         [RootTool chooseRootController:KeyWindow];

@@ -68,18 +68,23 @@
     _creat_at = create;
     
     //评论内容
-    /*
-     UILabel *text = [UILabel new];
-     [self.contentView addSubview:text];
-     _textLbl = text;
-     */
     UITextView *contentV = [UITextView new];
     contentV.editable = NO;
     contentV.scrollEnabled = NO;
-//    contentV.font = CellFont;
     contentV.backgroundColor = [UIColor clearColor];
     [self addSubview:contentV];
     _textLbl = contentV;
+}
+
+#pragma mark - 创建cell
++ (instancetype)cellWithTableview:(UITableView *)tableView
+{
+    static NSString *cellId = @"CommentCell";
+    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[CommentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+    }
+    return cell;
 }
 #pragma mark - 设置数据
 - (void)setComment:(Comment *)comment
@@ -121,16 +126,6 @@
     CGSize contentS = [_textLbl sizeThatFits:CGSizeMake(KeyWindow.bounds.size.width - CGRectGetMaxX(_avatorImage.frame) - LeftMargin, CGFLOAT_MAX)];
     self.textLbl.frame = CGRectMake(CGRectGetMaxX(_avatorImage.frame) + LeftMargin, CGRectGetMaxY(self.creat_at.frame), contentS.width, contentS.height);
     self.cellH = CGRectGetMaxY(_textLbl.frame);
-
-}
-#pragma mark - 创建cell
-+ (instancetype)cellWithTableview:(UITableView *)tableView
-{
-    static NSString *cellId = @"CommentCell";
-    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell) {
-        cell = [[CommentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
-    }
-    return cell;
+    
 }
 @end

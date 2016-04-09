@@ -37,6 +37,7 @@
     return _backgroundView;
 }
 
+#pragma mark - setup titleview
 - (void)setContentView:(UIView *)contentView
 {
     _contentView = contentView;

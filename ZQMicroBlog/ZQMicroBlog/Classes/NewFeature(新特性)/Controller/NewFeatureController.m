@@ -84,7 +84,7 @@
 - (void)setUpPageControl
 {
     UIPageControl *page = [[UIPageControl alloc]init];
-    page.center = CGPointMake(self.view.center.x, self.view.frame.size.height);
+    page.center = CGPointMake(self.view.center.x, self.view.frame.size.height-30);
     page.numberOfPages = 4;
     page.currentPageIndicatorTintColor = [UIColor redColor];
     page.pageIndicatorTintColor = [UIColor blackColor];
@@ -95,9 +95,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSInteger page = scrollView.contentOffset.x / scrollView.frame.size.width + 0.5;
-    
     _pageControl.currentPage = page;
-    
-    
 }
 @end

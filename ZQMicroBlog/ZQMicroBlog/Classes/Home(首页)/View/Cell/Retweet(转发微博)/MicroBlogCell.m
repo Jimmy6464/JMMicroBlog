@@ -97,15 +97,6 @@
                                        context:nil];
     return rect.size;
 }
-+ (instancetype)microBlogCellWithTableView:(UITableView *)tableView
-{
-    static NSString *cellId = @"microBlogCell";
-    MicroBlogCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell) {
-        cell = [[MicroBlogCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
-    }
-    return cell;
-}
 #pragma mark - 设置事件
 - (void)setUpEvent
 {
@@ -118,5 +109,15 @@
     BlogDetailsController *detail = [BlogDetailsController new];
     [PushTool pushController:detail byView:tap.view withObject:@{StatusKey:self.statues.retweeted_status}];
 }
++ (instancetype)microBlogCellWithTableView:(UITableView *)tableView
+{
+    static NSString *cellId = @"microBlogCell";
+    MicroBlogCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[MicroBlogCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+    }
+    return cell;
+}
+
 
 @end
