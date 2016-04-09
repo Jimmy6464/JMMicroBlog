@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ProfileController : UITableViewController
-
+#import "ProfileDelegate.h"
+@interface ProfileController : UIViewController
+@property(nonatomic,assign) id<ProfileDelegate> delegate;
 @end
