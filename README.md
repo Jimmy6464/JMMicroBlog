@@ -9,8 +9,9 @@ Platform:iOS  Author:JimmyNg  Date:2015-11-01
 ![message.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/message.gif)  
 **Mine**  
 ![mine.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/mine.gif)  
-**comment**  
-![comment.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/comment.gif)  **PostBlog**  
+**Comment**  
+![comment.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/comment.gif)  
+**PostBlog**  
 ![posting.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/posting.gif)    
 
 
